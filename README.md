@@ -12,7 +12,7 @@ Enriches snapdeal.com's products' data by appending review metadata from amazon.
 
 `./run.sh`
 
-The program will generate a file called `output-data.json` which will have the enriched data
+The program will generate a file called `output-data.json` (in the current working directory) which will have the enriched data
 
 ### Test
 
