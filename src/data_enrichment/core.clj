@@ -21,9 +21,9 @@
             (if (and (not-empty searched-product)
                      (>= (levenshtein-distance (:product-title d) (:product-title searched-product)) 65))
               (assoc d :reviews
-                (as-> (get searched-product :product-url) $
-                      (amzn/product-review-page "positive" $)
-                      (amzn/product-reviews $)))
+                (->> (get searched-product :product-url)
+                     (amzn/product-review-page "positive")
+                     (amzn/product-reviews)))
               (assoc d :reviews []))))
        sd-data))))
 
